@@ -1,4 +1,6 @@
-# Football League Standings Microservice
+# Football League Standings Application
+
+![Football League Standings Application](https://github.com/user-attachments/assets/5e55c1fc-184e-4f12-be33-4bbb7b6016d4)
 
 ## 1. Introduction
 
@@ -11,6 +13,7 @@ This microservice provides access to football league standings data. It's built 
 - Implement an offline mode to retrieve data from a cache when the external API is unavailable.
 - Demonstrate SOLID principles, 12-Factor App methodology, HATEOAS, and relevant design patterns.
 - Containerize the application with Docker for easy deployment.
+- React application to access the microservice.
 
 ## 2. Features
 
