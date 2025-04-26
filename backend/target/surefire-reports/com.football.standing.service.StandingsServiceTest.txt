@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.football.standing.service.StandingsServiceTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.556 s -- in com.football.standing.service.StandingsServiceTest

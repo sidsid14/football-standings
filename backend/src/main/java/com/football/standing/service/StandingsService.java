@@ -1,0 +1,55 @@
+package com.football.standing.service;
+
+import com.football.standing.dto.Countries;
+import com.football.standing.dto.League;
+import com.football.standing.dto.LeagueStanding;
+import com.football.standing.dto.Teams;
+import com.football.standing.service.strategy.ApiFetchingStrategy;
+import com.football.standing.service.strategy.CacheFetchingStrategy;
+import com.football.standing.util.HateoasLinkBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.CollectionModel;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class StandingsService {
+    @Autowired
+    private ApiFetchingStrategy apiFetchingStrategy;
+    @Autowired
+    private CacheFetchingStrategy cacheFetchingStrategy;
+
+    public CollectionModel<LeagueStanding> getStandings(String leagueId, boolean offlineMode) {
+        // Logic to fetch standings from the database or cache
+        List<LeagueStanding> standings = null;
+        if (offlineMode || cacheFetchingStrategy.isCached("get_standings", leagueId)) {
+            standings = cacheFetchingStrategy.fetchStandings(leagueId);
+        } else {
+            standings = apiFetchingStrategy.fetchStandings(leagueId);
+            if (standings != null) {
+                cacheFetchingStrategy.cacheStandings(leagueId, standings);
+            }
+        }
+
+        if (standings == null || standings.isEmpty()) {
+            return null;
+        } else {
+            return HateoasLinkBuilder.createStandingsResources(standings, leagueId);
+        }
+
+    }
+
+    public List<Countries> getCountries() {
+        return apiFetchingStrategy.fetchCountries();
+    }
+
+    public List<Teams> getTeamByLeagueId(String leagueId) {
+        return apiFetchingStrategy.fetchTeamByLeagueId(leagueId);
+    }
+
+    public List<League> getLeagueByCountryId(String countryId) {
+        return apiFetchingStrategy.fetchLeagueByCountryId(countryId);
+    }
+
+}

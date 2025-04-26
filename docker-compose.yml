@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  backend:
+    image: sidsid14/football-standings-backend:latest # Use the image from Docker Hub
+    # build:
+    #   context: ./backend
+    #   dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    restart: always
+
+  frontend:
+    image: sidsid14/football-standings-frontend:latest # Use the image from Docker Hub
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile
+    ports:
+      - "80:80" # Expose frontend on port 80
+    depends_on:
+      - backend # Frontend depends on backend being up
+    restart: always

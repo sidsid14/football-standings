@@ -1,0 +1,4 @@
+com/football/standing/service/strategy/CacheFetchingStrategyTest.class
+com/football/standing/service/strategy/ApiFetchingStrategyTest.class
+com/football/standing/FootbalStandingApplicationTests.class
+com/football/standing/service/StandingsServiceTest.class

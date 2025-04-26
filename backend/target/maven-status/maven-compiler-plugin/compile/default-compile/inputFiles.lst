@@ -1,0 +1,17 @@
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/FootbalStandingApplication.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/client/FootballAPIClient.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/client/RestFootballApiClient.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/config/AppConfig.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/controller/CountryController.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/controller/LeagueController.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/controller/StandingsController.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/controller/TeamController.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/dto/Countries.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/dto/League.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/dto/LeagueStanding.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/dto/Teams.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/service/StandingsService.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/service/strategy/ApiFetchingStrategy.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/service/strategy/CacheFetchingStrategy.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/service/strategy/StandingsFetchingStrategy.java
+/Users/sudhanshu/Projects/football-standings/backend/src/main/java/com/football/standing/util/HateoasLinkBuilder.java

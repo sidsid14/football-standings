@@ -1,0 +1,4 @@
+/Users/sudhanshu/Projects/football-standings/backend/src/test/java/com/football/standing/FootbalStandingApplicationTests.java
+/Users/sudhanshu/Projects/football-standings/backend/src/test/java/com/football/standing/service/StandingsServiceTest.java
+/Users/sudhanshu/Projects/football-standings/backend/src/test/java/com/football/standing/service/strategy/ApiFetchingStrategyTest.java
+/Users/sudhanshu/Projects/football-standings/backend/src/test/java/com/football/standing/service/strategy/CacheFetchingStrategyTest.java
