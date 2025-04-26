@@ -105,20 +105,22 @@ The backend service was developed using Test-Driven Development (TDD). Tests wer
 
 ### 4.2 Installation
 
-A. **Using Docker**
-
-- Docker images for both frontend and backend are available on docker hub.
-  `bash
-    docker compose up -d
-    `
-  B. **Local Development/Deployment**
-
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://your-repo
+    git clone https://github.com/sidsid14/football-standings.git
     cd football-standings
     ```
+
+    A. **Using Docker**
+
+    - Docker images for both frontend and backend are available on docker hub.
+      ```bash
+      docker compose up -d
+      ```
+      B. **Local Development/Deployment**
+    - Run Sprinboot application in backend.
+    - Run React application in fronend.
 
     Access the UI at http://localhost
 
@@ -132,7 +134,6 @@ A. **Using Docker**
       ```properties
       api.football.key=YOUR_API_KEY_HERE
       ```
-      **Important:** Do not commit your API key directly to the repository. Use environment variables or a secure configuration management solution in production.
 
 ### 4.3 Building the Application
 
@@ -142,12 +143,12 @@ A. **Using Docker**
 cd backend
 ./mvnw clean package
 docker build -t football-standings-backend .
-#For pushing to docker hub
+
+#For docker hub
 docker build -t sidsid14/football-standings-backend .
+
 docker push sidsid14/football-standings-backend
 ```
-
-````
 
 This will compile the Java code and create an executable JAR file in the backend/target/ directory.
 
@@ -158,7 +159,7 @@ cd frontend
 npm install
 npm run build
 docker build -t football-standings-frontend .
-````
+```
 
 ### 4.4 Running the Application
 
