@@ -80,7 +80,7 @@ The application follows the principles of the 12-Factor App methodology:
 2.  **Dependencies:** Dependencies are explicitly declared in `pom.xml`.
 3.  **Config:** Configuration (e.g., API key) is stored in environment variables.
 4.  **Backing Services:** The external API is treated as an attached resource.
-5.  **Build, Release, Run:** The CI/CD pipeline separates these stages.
+5.  **Build, Release, Run:** The CI/CD pipeline separates these stages. [Todo]
 6.  **Stateless Processes:** The application is stateless.
 7.  **Port Binding:** The application exports its service via port 8080.
 8.  **Concurrency:** The application can be scaled horizontally.
