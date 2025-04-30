@@ -9,8 +9,9 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Collections;
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Component
 public class RestFootballApiClient implements FootballAPIClient{
@@ -26,6 +27,7 @@ public class RestFootballApiClient implements FootballAPIClient{
 
     private final String ACTION_GET_STANDINGS = "get_standings";
 
+    private static final Logger logger = LoggerFactory.getLogger(RestFootballApiClient.class);
 
     @Override
     public List<LeagueStanding> fetchStandings(String leagueId) {
@@ -41,8 +43,9 @@ public class RestFootballApiClient implements FootballAPIClient{
                 new ParameterizedTypeReference<List<LeagueStanding>>() {}
             ).getBody();
         } catch (Exception e) {
-            System.err.println("Error fetching from API: " + e.getMessage());
+            logger.error("Error fetching from API: " + e.getMessage());
             return null;
+
         }
     }
 
@@ -64,7 +67,7 @@ public class RestFootballApiClient implements FootballAPIClient{
                     new ParameterizedTypeReference<T>() {}
             ).getBody();
         } catch (Exception e) {
-            System.err.println("Error calling API: " + e.getMessage());
+            logger.error("Error fetching from API: " + e.getMessage());
             return null;
         }
     }
