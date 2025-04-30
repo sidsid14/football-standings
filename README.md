@@ -1,6 +1,6 @@
 # Football League Standings Application
 
-![Football League Standings Application](https://github.com/user-attachments/assets/5e55c1fc-184e-4f12-be33-4bbb7b6016d4)
+![Football League Standings Application](https://github.com/user-attachments/assets/d6c7fcaa-dcff-4590-ae70-39a9eb228c34)
 
 ## 1. Introduction
 
