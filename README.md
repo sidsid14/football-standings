@@ -53,6 +53,7 @@ The application follows a layered architecture:
 - **Maven:** Build tool
 - **Docker:** Containerization
 - **Spring HATEOAS:** For implementing HATEOAS in the API responses
+- **Swagger:** For documenting the APIs
 
 ### 3.3 Design Patterns
 
