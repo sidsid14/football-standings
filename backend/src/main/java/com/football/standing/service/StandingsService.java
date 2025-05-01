@@ -48,14 +48,17 @@ public class StandingsService {
     }
 
     public List<Countries> getCountries() {
+        logger.info("Fetching countires from API");
         return apiFetchingStrategy.fetchCountries();
     }
 
     public List<Teams> getTeamByLeagueId(String leagueId) {
+        logger.info("Fetching teams from API for leagueId: {}", leagueId);
         return apiFetchingStrategy.fetchTeamByLeagueId(leagueId);
     }
 
     public List<League> getLeagueByCountryId(String countryId) {
+        logger.info("Fetching leagues from API for countryId: {}", countryId);
         return apiFetchingStrategy.fetchLeagueByCountryId(countryId);
     }
 
