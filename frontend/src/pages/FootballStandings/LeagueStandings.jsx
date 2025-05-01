@@ -61,7 +61,7 @@ function LeagueStandings() {
       `standings?${params.toString()}`,
       (data) => {
         // Handle successful data fetch
-        const formattedData = data._embedded.leagueStandingList.map((team) => ({
+        const formattedData = data._embedded.linkedHashMapList.map((team) => ({
           key: team.team_id,
           overall_league_position: team.overall_league_position,
           team_name: team.team_name,
