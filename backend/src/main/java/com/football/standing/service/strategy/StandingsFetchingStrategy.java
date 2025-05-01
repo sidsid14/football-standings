@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface StandingsFetchingStrategy {
     List<LeagueStanding> fetchStandings(String leagueId) throws IOException;
+
 }

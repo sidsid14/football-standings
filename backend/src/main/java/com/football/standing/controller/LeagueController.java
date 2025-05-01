@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 import java.util.Map;
@@ -35,13 +36,7 @@ public class LeagueController {
                                     schema = @Schema(implementation = Map.class, example = "{\"error\": 404, \"message\": \"Countries not found!\"}"))),
             }
     )
-    public ResponseEntity<?> getLeagueByCountryId(@RequestParam String countryId) {
-
-        List<League> league = standingsService.getLeagueByCountryId(countryId);
-        if (league == null || league.isEmpty()) {
-            return ResponseEntity.status(404).body(Map.of("error", 404, "message", "League not found!"));
-        }
-
-        return ResponseEntity.ok(league);
+    public Mono<ResponseEntity<List<League>>> getLeagueByCountryId(@RequestParam String countryId) {
+        return standingsService.getLeagueByCountryId(countryId);
     }
 }

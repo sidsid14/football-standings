@@ -1,9 +1,11 @@
 package com.football.standing.client;
 
-import com.football.standing.dto.LeagueStanding;
+import org.springframework.http.ResponseEntity;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
 public interface FootballAPIClient {
-    List<LeagueStanding> fetchStandings(String leagueId);
+    <T> Mono<ResponseEntity<List<T>>> fetchFromWebClient(String action, Class<T> responseType, String... queryParams);
+
 }

@@ -11,7 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -47,19 +49,20 @@ public class StandingsService {
 
     }
 
-    public List<Countries> getCountries() {
+    public Mono<ResponseEntity<List<Countries>>> getCountries() {
         logger.info("Fetching countires from API");
         return apiFetchingStrategy.fetchCountries();
     }
 
-    public List<Teams> getTeamByLeagueId(String leagueId) {
+    public Mono<ResponseEntity<List<Teams>>> getTeamByLeagueId(String leagueId) {
         logger.info("Fetching teams from API for leagueId: {}", leagueId);
         return apiFetchingStrategy.fetchTeamByLeagueId(leagueId);
     }
 
-    public List<League> getLeagueByCountryId(String countryId) {
+    public Mono<ResponseEntity<List<League>>> getLeagueByCountryId(String countryId) {
         logger.info("Fetching leagues from API for countryId: {}", countryId);
         return apiFetchingStrategy.fetchLeagueByCountryId(countryId);
     }
+
 
 }

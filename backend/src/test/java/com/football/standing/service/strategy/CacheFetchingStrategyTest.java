@@ -18,45 +18,45 @@ class CacheFetchingStrategyTest {
     private CacheFetchingStrategy cacheFetchingStrategy;
 
     @Test
-        void testCacheStandings() {
-            String key = "league-1";
-            List<LeagueStanding> standings = List.of(new LeagueStanding());
+    void testCacheStandings() {
+        String key = "league-1";
+        List<LeagueStanding> standings = List.of(new LeagueStanding());
 
-            cacheFetchingStrategy.cacheStandings(key, standings);
+        cacheFetchingStrategy.cacheStandings(key, standings);
 
-            assertFalse(cacheFetchingStrategy.isCached("action", "league-1"));
-        }
+        assertFalse(cacheFetchingStrategy.isCached("action", "league-1"));
+    }
 
-        @Test
-        void testFetchStandingsWhenCached() {
-            String key = "league-1";
-            List<LeagueStanding> standings = List.of(new LeagueStanding());
+    @Test
+    void testFetchStandingsWhenCached() {
+        String key = "league-1";
+        List<LeagueStanding> standings = List.of(new LeagueStanding());
 
-            cacheFetchingStrategy.cacheStandings(key, standings);
+        cacheFetchingStrategy.cacheStandings(key, standings);
 
-            List<LeagueStanding> fetchedStandings = cacheFetchingStrategy.fetchStandings(key);
-            assertNotNull(fetchedStandings);
-            assertEquals(standings, fetchedStandings);
-        }
+        List<LeagueStanding> fetchedStandings = cacheFetchingStrategy.fetchStandings(key);
+        assertNotNull(fetchedStandings);
+        assertEquals(standings, fetchedStandings);
+    }
 
-        @Test
-        void testFetchStandingsWhenNotCached() {
-            String key = "league-2";
+    @Test
+    void testFetchStandingsWhenNotCached() {
+        String key = "league-2";
 
-            List<LeagueStanding> fetchedStandings = cacheFetchingStrategy.fetchStandings(key);
-            assertNull(fetchedStandings);
-        }
+        List<LeagueStanding> fetchedStandings = cacheFetchingStrategy.fetchStandings(key);
+        assertNull(fetchedStandings);
+    }
 
-        @Test
-        void testIsCached() {
-            String action = "action";
-            String leagueId = "league-1";
-            String key = action + "-" + leagueId;
-            List<LeagueStanding> standings = List.of(new LeagueStanding());
+    @Test
+    void testIsCached() {
+        String action = "action";
+        String leagueId = "league-1";
+        String key = action + "-" + leagueId;
+        List<LeagueStanding> standings = List.of(new LeagueStanding());
 
-            cacheFetchingStrategy.cacheStandings(key, standings);
+        cacheFetchingStrategy.cacheStandings(key, standings);
 
-            assertTrue(cacheFetchingStrategy.isCached(action, leagueId));
-            assertFalse(cacheFetchingStrategy.isCached("action", "league-2"));
-        }
+        assertTrue(cacheFetchingStrategy.isCached(action, leagueId));
+        assertFalse(cacheFetchingStrategy.isCached("action", "league-2"));
+    }
 }
