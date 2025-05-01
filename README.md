@@ -46,7 +46,7 @@ The application follows a layered architecture:
 - **Java:** Programming language
 - **Spring Boot:** Framework for building the application
 - **Spring Web (REST):** For building RESTful APIs
-- **RestTemplate:** For making HTTP requests to the external API
+- **WebClient:** For making HTTP requests to the external API
 - **Jackson:** For JSON processing (serialization/deserialization)
 - **Lombok:** For reducing boilerplate code in DTOs
 - **JUnit 5 & Mockito:** For testing
